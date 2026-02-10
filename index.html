@@ -1,16 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }
-    h1 { color: #333; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florian Kessler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #fafaf8;
+            --fg: #1a1a18;
+            --accent: #3d3d3a;
+            --muted: #9e9e96;
+            --rule: #e2e0db;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 680px;
+            padding: 2rem clamp(2rem, 8vw, 5rem);
+        }
+
+        .sentence {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.3rem, 3.2vw, 2rem);
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--fg);
+        }
+
+        .beat {
+            display: block;
+            margin-bottom: 0.5em;
+            animation: fadeIn 0.9s ease-out both;
+        }
+
+        .beat:nth-child(1) { animation-delay: 0.3s; }
+        .beat:nth-child(2) { animation-delay: 0.7s; }
+
+        .close {
+            display: block;
+            margin-top: 1.2em;
+            font-style: italic;
+            color: var(--muted);
+            animation: fadeIn 0.8s ease-out 1.2s both;
+        }
+
+        .footer {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            animation: fadeIn 0.8s ease-out 1.6s both;
+        }
+
+        .name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: var(--fg);
+        }
+
+        .contact {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: var(--muted);
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .contact a:hover {
+            color: var(--fg);
+        }
+
+        @media (max-width: 500px) {
+            .footer {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .contact {
+                gap: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Hello World</h1>
-  <p>My first GitHub Pages site!</p>
+    <div class="container">
+        <div class="sentence">
+            <span class="beat">You bring me in when your IT situation has become so complex, political, or stuck that your own people can't see the way forward anymore.</span>
+            <span class="beat">I make it visible, name it, structure it, and get your team moving.</span>
+            <span class="close">Then I leave.</span>
+        </div>
+        <div class="footer">
+            <span class="name">Florian Kessler</span>
+            <div class="contact">
+                <a href="mailto:florian@msl.solutions">florian@msl.solutions</a>
+                <a href="https://linkedin.com/in/florian-kessler">LinkedIn</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
